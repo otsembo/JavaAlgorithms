@@ -1,5 +1,6 @@
 package com.algorithms;
 
+import com.algorithms.sorting.BubbleSort;
 import com.algorithms.sorting.SelectionSort;
 
 import java.util.ArrayList;
@@ -16,9 +17,11 @@ public class Main {
         // initialize list
         setUpList(120);
 
-        //test selection sort
-        SelectionSort mySort = new SelectionSort(numbers);
+        //test bubble sort
+        BubbleSort mySort = new BubbleSort(numbers);
         mySort.sortList(true);
+
+
 
     }
 

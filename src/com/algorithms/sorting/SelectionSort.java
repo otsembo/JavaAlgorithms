@@ -1,8 +1,12 @@
 package com.algorithms.sorting;
 
+import com.algorithms.classes.SortClass;
+import com.algorithms.interfaces.Sort;
+import com.algorithms.utils.AppUtil;
+
 import java.util.List;
 
-public class SelectionSort {
+public class SelectionSort extends SortClass implements Sort {
 
     private final List<Integer> numbers;
 
@@ -10,17 +14,10 @@ public class SelectionSort {
         this.numbers = numbers;
     }
 
-    //print array during sorting
-    private void printList(){
-        System.out.println(numbers.toString());
-    }
-
+    @Override
     public List<Integer> sortList(boolean showList){
-
-        if(showList){
-            //print array before sorting
-            printList();
-        }
+        //print array before sorting
+        appUtil.printList("INITIAL ARRAY: ", numbers);
 
         //find the number of items in the array
         int n = numbers.size();
@@ -38,17 +35,21 @@ public class SelectionSort {
                 }
 
             }
-
             //swap element with first element
-            int tmp = numbers.get(indx);
-            numbers.set(indx, numbers.get(i));
-            numbers.set(i, tmp);
+            swapElements(numbers, indx, i);
 
-            if (showList) printList();
+            //display the list
+            if(showList) appUtil.printList("", numbers);
 
         }
+        appUtil.printList("FINAL ARRAY: ", numbers);
         //return the value
         return numbers;
+    }
+
+    @Override
+    public void swapElements(List<Integer> myNumbers, int i, int j) {
+        super.swapElements(myNumbers, i, j);
     }
 
 }
