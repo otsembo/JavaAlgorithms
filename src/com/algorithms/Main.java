@@ -17,11 +17,6 @@ public class Main {
         // initialize list
         setUpList(120);
 
-        //test bubble sort
-        BubbleSort mySort = new BubbleSort(numbers);
-        mySort.sortList(true);
-
-
 
     }
 
@@ -35,6 +30,15 @@ public class Main {
             numbers.add(random.nextInt(maxValue));
         }
 
+    }
+
+    public static List<Integer> getTestList(int maxValue){
+        Random myRandom = new Random();
+        List<Integer> myNumbers = new ArrayList<>(listCapacity);
+        for (int i = 0; i <= listCapacity ; i++) {
+            myNumbers.add(myRandom.nextInt(maxValue));
+        }
+        return myNumbers;
     }
 
 }
