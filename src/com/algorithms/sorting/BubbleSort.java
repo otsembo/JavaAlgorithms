@@ -23,9 +23,9 @@ public class BubbleSort extends SortClass implements Sort {
         for (int i = 0; i < n-1; i++) {
             //loop unsorted array
             for (int j = 0; j < n-i-1; j++) {
-                if(numbers.get(j) > numbers.get(i)){
+                if(numbers.get(j) > numbers.get(j+1)){
                     //swap array elements
-                    swapElements(numbers, i, j);
+                    swapElements(numbers, j+1, j);
                     if(showList) appUtil.printList("", numbers);
                 }
             }
