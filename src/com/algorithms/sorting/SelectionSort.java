@@ -6,7 +6,7 @@ import com.algorithms.utils.AppUtil;
 
 import java.util.List;
 
-public class SelectionSort extends SortClass implements Sort {
+public class SelectionSort extends SortClass {
 
     private final List<Integer> numbers;
 

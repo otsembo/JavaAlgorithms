@@ -5,7 +5,7 @@ import com.algorithms.interfaces.Sort;
 
 import java.util.List;
 
-public class BubbleSort extends SortClass implements Sort {
+public class BubbleSort extends SortClass {
 
     private final List<Integer> numbers;
 
