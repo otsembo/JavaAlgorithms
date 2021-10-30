@@ -2,10 +2,7 @@ package test;
 
 import com.algorithms.Main;
 import com.algorithms.classes.CustomSorter;
-import com.algorithms.sorting.BubbleSort;
-import com.algorithms.sorting.InsertionSort;
-import com.algorithms.sorting.MergeSort;
-import com.algorithms.sorting.SelectionSort;
+import com.algorithms.sorting.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,7 +19,8 @@ public class SortingTest {
     private List<Integer> expectedList = new ArrayList<>();
     private List<Integer> insertionNumbers = new ArrayList<>();
     private List<Integer> mergeSortNumbers = new ArrayList<>();
-    
+    private List<Integer> quickSortNumbers = new ArrayList<>();
+
     //before test execution
     @Before
     public void testSetUp(){
@@ -35,6 +33,7 @@ public class SortingTest {
         selectionNumbers = expectedList;
         insertionNumbers = expectedList;
         mergeSortNumbers = expectedList;
+        quickSortNumbers = expectedList;
 
         //sort bubbleNumbers using BubbleSort
         //sorting classes
@@ -50,8 +49,12 @@ public class SortingTest {
         insertionSort.sortList(false);
 
         //sort using insertion sort
-        MergeSort mergeSort = new MergeSort(mergeSortNumbers);
-        mergeSort.sortList(false);
+        /*MergeSort mergeSort = new MergeSort(mergeSortNumbers);
+        mergeSort.sortList(false);*/
+
+        //Quick sort
+        QuickSort quickSort = new QuickSort(quickSortNumbers);
+        quickSort.sortList(false);
 
         //sort with default sorter
         Collections.sort(expectedList);
@@ -79,6 +82,12 @@ public class SortingTest {
     @Test
     public void testMergeSort(){
         assertEquals(expectedList, mergeSortNumbers);
+    }
+
+    //quick sort test
+    @Test
+    public void testQuickSOrt(){
+        assertEquals(expectedList, quickSortNumbers);
     }
 
 
