@@ -5,6 +5,7 @@ import com.algorithms.classes.CustomSorter;
 import com.algorithms.sorting.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,7 +23,7 @@ public class SortingTest {
     private List<Integer> quickSortNumbers = new ArrayList<>();
 
     //before test execution
-    @Before
+    @BeforeEach
     public void testSetUp(){
         //set up values
         //max value of lists
